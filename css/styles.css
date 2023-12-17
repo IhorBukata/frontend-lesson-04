@@ -69,6 +69,7 @@ a:active {
   justify-content: center;
   flex-shrink: 0;
   border-bottom: 1px solid #e7e9fc;
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .logo-header {
@@ -89,7 +90,7 @@ a:active {
 }
 
 .nav-item {
-  color: #2e2f42;
+  color: #404bbf;
   /* Body Medium */
   font-size: 16px;
   font-weight: 500;
@@ -98,6 +99,8 @@ a:active {
   letter-spacing: 0.02em;
   padding: 24px 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+
 }
 
 .nav-links {
@@ -105,12 +108,15 @@ a:active {
 }
 
 .nav-links-active::after {
+  position: absolute;
   content: '';
   border-radius: 2px;
   background: #404BBF;
   display: block;
   width: 48px;
   height: 4px;
+  left: 0;
+  bottom: -1px;
 }
 
 .nav-item:hover {
@@ -177,6 +183,7 @@ a:active {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)),
     url(../images/hero-background.jpg);
+  max-width: 1440px;
 }
 
 .title {
@@ -215,7 +222,7 @@ a:active {
   min-width: 169px;
   height: 56px;
   margin: 0 auto;
-  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service-btn:hover {
@@ -252,6 +259,9 @@ a:active {
 }
 
 .features-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 264px;
   height: 112px;
   flex-shrink: 0;
@@ -315,26 +325,43 @@ a:active {
 }
 
 .team-box-items {
-  padding: 32px 16px;
+  padding: 32px 0;
 }
 
 .social-team {
   display: flex;
   gap: 24px;
+  justify-content: center;
+}
+
+.social-li {
+  width: 40px;
+  height: 40px;
 }
 
 .socials-icons {
-  width: 40px;
-  height: 40px;
+  display: flex;
+  width: 100%;
+  height: 100%;
   flex-shrink: 0;
   background-color: #4D5AE5;
   border-radius: 50%;
+  align-items: center;
+  justify-content: center;
   padding: 12px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-icons:hover {
-  background-color: #31D0AA;
+  background-color: #404BBF;
+}
+
+.socials-icons:focus {
+  background-color: #404BBF;
+}
+
+.socials-icon {
+  fill: #f4f4fd;
 }
 
 
@@ -374,6 +401,7 @@ a:active {
 
 .portfolio-li {
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-box-items {
@@ -397,9 +425,8 @@ a:active {
   color: #434455;
   /* Body */
   font-size: 16px;
-  line-height: 1.5em;
-  /* 150% */
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .portfolio-wrapper {
@@ -474,7 +501,11 @@ a:active {
 
 .footer-list {
   display: flex;
-  gap: 120px;
+  align-items: baseline
+}
+
+.footer-logo-p {
+  margin-right: 120px;
 }
 
 .footer-socails-title {
